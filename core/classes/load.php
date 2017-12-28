@@ -2,7 +2,7 @@
 
 class load {
     static function view($viewFile, $viewVars = array()) {
-        extract($array);
+        extract($viewVars);
         $viewFileCheck = explode(".", $viewFile);
         if(!isset($viewFileCheck[1])) {
             $viewFile .= ".php";
