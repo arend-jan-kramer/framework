@@ -31,6 +31,8 @@ $GLOBALS["config"] = array(
     )
 );
 
+$GLOBALS["instances"] = array();
+
 require_once $GLOBALS["config"]["path"]["core"]."autoload.php";
 
 new router();

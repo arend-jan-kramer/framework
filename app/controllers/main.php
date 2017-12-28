@@ -1,4 +1,5 @@
 <?php
+
 /* 
  * main is een uitbereiding van controller
  * in controllerInterface staat welke functies er moeten zijn
