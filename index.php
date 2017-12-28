@@ -1,7 +1,10 @@
 <?php
 /*
- *
+ * part 1
  * https://www.youtube.com/watch?v=MnFRBuVKkMA
+ * 
+ * Part 2
+ * https://www.youtube.com/watch?v=RGOYhoOQGP4
  * 
  */
 error_reporting(E_ALL);
@@ -31,6 +34,3 @@ $GLOBALS["config"] = array(
 require_once $GLOBALS["config"]["path"]["core"]."autoload.php";
 
 new router();
-
-// echo "<pre>";
-// print_r($GLOBALS);

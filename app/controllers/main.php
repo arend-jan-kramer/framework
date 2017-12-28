@@ -1,14 +1,12 @@
 <?php
-
-class main extends controller {
-    function __construct() {
-        echo "class: ".__CLASS__."<br>";
-    }
+/* 
+ * main is een uitbereiding van controller
+ * in controllerInterface staat welke functies er moeten zijn
+ * 
+ */
+class main extends controller implements controllerInterface {
     function index() {
-        echo "function: ".__FUNCTION__."<br>home pagina!<br>";
-    }
-
-    function foo() {
-        echo "function: ".__FUNCTION__."<br>sub van home<br>";
+        // load::view('main/index'); / or ::
+        load::view('main::index');
     }
 }
