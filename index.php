@@ -6,12 +6,21 @@
  * Part 2
  * https://www.youtube.com/watch?v=RGOYhoOQGP4
  * 
+ * Part 3
+ * https://www.youtube.com/watch?v=Q8dYzHAUpwU
+ * 
+ * Part 4
+ * https://www.youtube.com/watch?v=cwme0qRt1mw
+ * 
+ * Part 5
+ * 
  */
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 $GLOBALS["config"] = array(
-    "addname" => "PHP framework",
+    "appName" => "PHP framework",
+    "version" => "0.0.1",
     "domain" => "framework.nl",
     "path" => array( 
         "app" =>"app/",
