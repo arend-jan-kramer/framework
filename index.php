@@ -16,18 +16,25 @@
  * https://www.youtube.com/watch?v=qQaLluMCbR0
  * 
  * Part 6
+ * https://www.youtube.com/watch?v=2iBM7_TVyU4
  * 
+ * Part 7
+ * https://www.youtube.com/watch?v=hEj7seVxKII
+ * 
+ * Part 8
  * 
  */
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-
 $GLOBALS["config"] = array(
     "appName" => "PHP framework",
     "version" => "0.0.1",
     "domain" => "framework.nl",
     "path" => array( 
         "app" =>"app/",
+        "session" => "/app/sessions",
+        "basePath" => __DIR__,
         "core" => "core/",
         "index" => "index.php"
     ),
@@ -38,12 +45,12 @@ $GLOBALS["config"] = array(
     "routes" => array(),
     "database" => array(
         "host" => "localhost",
-        "username" => "",
+        "username" => "root",
         "password" => "",
-        "name" => ""
+        "name" => "phpframework"
     )
 );
-
+date_default_timezone_set("Europe/Amsterdam");
 $GLOBALS["instances"] = array();
 
 require_once $GLOBALS["config"]["path"]["core"]."autoload.php";

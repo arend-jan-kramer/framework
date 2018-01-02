@@ -2,8 +2,8 @@
 
 class url {
     static function part($number) {
-        $uri = explode("?", $_SERVER["request_uri"]);
-        $parts = explode("/", $uri[0]);
+        $uri = explode();
+        $parts = explode("/", $uri);
         return (isset($parts[$number])) ? $parts[$number] : false;
     }
 
@@ -46,5 +46,16 @@ class url {
             $prefix = "";
         }
         return $prefix;
+    }
+
+    static function redir($to, $exit = true) {
+        if (headers_sent()) {
+            echo "<script>window.location = '{$to}' ;</script>";
+        } else {
+            header("location: {$to}");
+        }
+        if ($exit) {
+            die();
+        }
     }
 }

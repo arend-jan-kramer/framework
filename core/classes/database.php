@@ -6,9 +6,9 @@ class database {
     private $result = null;
     public $curent_field = "";
     public $length = "";
-    public $$num_rows = "";
+    public $num_rows = "";
 
-    function __construct($host, $username, $password, $database = null) {
+    function connect($host, $username, $password, $database = null) {
         if(is_null($database)) {
             $this->obj = new mysqli($host, $username, $password);
         } else {
@@ -39,7 +39,7 @@ class database {
             $this->num_rows = $this->result->num_rows;
             return $this->results;
         } else {
-            if(!is_array($arr)){
+            if(!is_array($args)){
                 $argsBkp = $args;
                 $args = array($argsBkp);
             }
@@ -51,7 +51,7 @@ class database {
                     } else if(is_double($value)) {
                         $datatypes .= "d";
                     } else if(is_string($value)) {
-                        $datatypes .= "s"
+                        $datatypes .= "s";
                     } else {
                         $datatypes .= "b";
                     }
@@ -63,7 +63,7 @@ class database {
                     if($this->result) {
                         $this->Current_field = $this->result->current_field;
                         $this->lengths = $this->result->lengths;
-                        $this->num_rows $this->result->num_rows;
+                        $this->num_rows = $this->result->num_rows;
                     } else {
                         $this->current_field = "";
                         $this->lengths = 0;
@@ -140,9 +140,5 @@ class database {
             $out[] = $row;
         }
         return $out;
-    }
-
-    function __destruct() {
-        $this->obj->close();
     }
 }

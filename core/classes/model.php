@@ -2,11 +2,12 @@
 class model {
     public $model;
     function __construct() {
-        $this->model = new database(
-            $GLOBAL["config"]["database"]["host"],
-            $GLOBAL["config"]["database"]["username"],
-            $GLOBAL["config"]["database"]["password"],
-            $GLOBAL["config"]["database"]["database"]
+        $this->model = new database();
+        $this->model->connect(
+            $GLOBALS["config"]["database"]["host"],
+            $GLOBALS["config"]["database"]["username"],
+            $GLOBALS["config"]["database"]["password"],
+            $GLOBALS["config"]["database"]["name"]
         );
     }
 }

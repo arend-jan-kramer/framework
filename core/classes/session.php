@@ -1,11 +1,13 @@
 <?php
 class session {
     function __construct() {
+        ini_set("session.save_handler", "files");
+        ini_set("session.save_path", $GLOBALS["config"]["path"]["basePath"]."/".$GLOBALS["config"]["path"]["session"]);
         if (!isset($_SESSION)) {
             session_start();
         }
         foreach ($_COOKIE as $key => $value) {
-            if (!issset($_SESSION[$key])) {
+            if (!isset($_SESSION[$key])) {
                 if (json_last_error() == JSON_ERROR_NONE) {
                     $_SESSION[$key] = json_decode($value);
                 } else {
@@ -19,12 +21,13 @@ class session {
         if (is_array($key)) {
             $set = true;
             foreach ($key as $k) {
-                if(!session::check($k)) {
+                if (!session::check($k)) {
                     $set = false;
                 }
             }
+            return $set;
         } else {
-            $key = session::generateSessionKey();
+            $key = session::generateSessionKey($key);
             return isset($_SESSION[$key]);
         }
     }
