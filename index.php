@@ -24,15 +24,16 @@
  * Part 8
  * 
  */
-
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $GLOBALS["config"] = array(
     "appName" => "PHP framework",
     "version" => "0.0.1",
     "domain" => "framework.nl",
+    "cache_enabled" => false,
     "path" => array( 
         "app" =>"app/",
+        "cache" => "caches/",
         "session" => "/app/sessions",
         "basePath" => __DIR__,
         "core" => "core/",
