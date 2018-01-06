@@ -22,6 +22,10 @@
  * https://www.youtube.com/watch?v=hEj7seVxKII
  * 
  * Part 8
+ * https://www.youtube.com/watch?v=Xf23YXAYh8E
+ * 
+ * Part 9
+ * https://www.youtube.com/watch?v=XTPeA7TTbiw
  * 
  */
 error_reporting(E_ALL);
@@ -31,11 +35,14 @@ $GLOBALS["config"] = array(
     "version" => "0.0.1",
     "domain" => "framework.nl",
     "cache_enabled" => false,
+    "handlebars_enabled" => true,
     "path" => array( 
         "app" =>"app/",
         "cache" => "caches/",
         "session" => "/app/sessions",
-        "basePath" => __DIR__,
+        "basePath" => "/",
+        // "basePath" => "D://xampp/htdocs/PHP/framework/",
+        // "basePath" => __DIR__,
         "core" => "core/",
         "index" => "index.php"
     ),
